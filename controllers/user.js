@@ -7,14 +7,11 @@
 
  
  const usuariosGet = (req, res = response)=>{
+    const {nombre,correo,password,rol }= req.body;
+    const usuario = new Usuario({nombre,correo,password,rol})
     
-    const query = req.query;
     
-    res.json({
-            ok:true,
-            msg:'get-api-controller',
-            query
-        });
+    res.json({usuario});
     }
 
 
